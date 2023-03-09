@@ -101,6 +101,14 @@ document.querySelectorAll(".header__nav-link").forEach((link) => {
     });
   });
 });
+document.querySelectorAll(".link").forEach((link) => {
+  link.addEventListener("click", function (e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute("href")).scrollIntoView({
+      behavior: "smooth",
+    });
+  });
+});
 const skillsArr = document.querySelectorAll(".skills__list-item-inner");
 skillsArr.forEach((skill) => {
   skill.addEventListener("mouseover", (e) => {

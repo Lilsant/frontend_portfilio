@@ -101,7 +101,7 @@ document.querySelectorAll(".header__nav-link").forEach((link) => {
     });
   });
 });
-document.querySelectorAll(".link").forEach((link) => {
+document.querySelectorAll(".link-btn").forEach((link) => {
   link.addEventListener("click", function (e) {
     e.preventDefault();
     document.querySelector(this.getAttribute("href")).scrollIntoView({

@@ -1,27 +1,31 @@
 @import "_normalize.sass"
 @import "_variables.sass"
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap')
+
+html
+    font-size: 1vw
+
 body 
     background-color: $bg-main
     color: $white
     font-family: 'DM Sans', sans-serif
     font-weight: 500
 section
-    opacity: 0
+    // opacity: 0
 .element-show
     opacity: 1
     transition: all 1.5s
     transform: translateY(3%)
 .container
-    width: 1050px
-    padding-top: 35px
+    width: 65.625rem
+    padding-top: 2.1875rem
     margin: 0 auto
 .header
     display: flex
     justify-content: space-between
     align-items: center
     &__logo
-        font-size: 23px
+        font-size: 1.4375rem
         font-weight: 700
         user-select: none
         &-block
@@ -38,10 +42,10 @@ section
                 content: ''
                 display: block
                 position: absolute
-                bottom: -5px
+                bottom: -0.3125rem
                 left: 0
                 width: 0%
-                height: 3px
+                height: .1875rem
                 background-color: $bg-yellow
                 transition: all 0.5s
             &:hover
@@ -52,40 +56,45 @@ section
         justify-content: space-between
     &__nav-link
         color: $white
-        font-size: 18px
+        font-size: 1.125rem
 .pipe
     color: $gray
     display: inline-block
 .information
-    margin-top: 110px
+    margin-top: 6.875rem
     display: flex
     justify-content: space-between
+    &__image
+        width: 18.75rem
+        height: 15.9375rem
     &__title
         width: 60%
         line-height: 2.7rem
     &__subtitle
-        margin-top: 18px
-        margin-bottom: 35px
+        margin-top: 1.125rem
+        margin-bottom: 2.1875rem
         color: $gray
     &__hand
         display: inline-block
         color: $bg-yellow
         animation: hand 1.5s infinite alternate linear
     .button-yellow
-        margin-right: 20px
+        margin-right: 1.25rem
 .button
-    padding: 12px 30px
+    padding: .75rem 1.875rem
     background-color: transparent
     color: $white
-    border: 1px solid #333
+    border: .0625rem solid #333
     cursor: pointer
     transition: all 0.2s
     &-yellow
         background-color: $bg-yellow
         color: $black
         border: none
+        &:hover
+            background-color: #c99b1f 
 .about
-    margin-top: 160px
+    margin-top: 10rem
     &__main
         width: 65%
         margin: 0 auto
@@ -94,17 +103,26 @@ section
         font-weight: 400
         color: $gray
         line-height: 1.8rem
+        .word
+            opacity: 0
+
     &__list
         display: flex
         justify-content: space-between
         align-items: center
         text-align: center
         padding-inline-start: 0
+        &-item
+            opacity: 0
+            transform: translateY(100%)
     &__contacts
-        margin-top: 100px
+        margin-top: 6.25rem
+        &-icon
+            width: 2rem
+            height: 2rem
         &-img
-            width: 62px
-            height: 62px
+            width: 3.875rem
+            height: 3.875rem
             margin: 0 auto
             background-color: $bg-img
             border-radius: 50%
@@ -114,37 +132,41 @@ section
             transition: all 0.3s
             cursor: pointer
             &:hover
-                transform: translateY(-10px)
+                transform: translateY(-0.625rem)
                 background: $gray
         &-title
-            margin-top: 15px
-            margin-bottom: 5px
+            margin-top: .9375rem
+            margin-bottom: .3125rem
             font-weight: 700
-            font-size: 16px
+            font-size: 1rem
         &-description
             font-weight: 400
-            font-size: 14px
+            font-size: .875rem
             color: $gray
 .title
         font-weight: 700
-        font-size: 24px
+        font-size: 1.5rem
+        .char
+            opacity: 0
 
 .skills
     &__inner
         text-align: center
-        padding-top: 130px
-        padding-bottom: 130px
+        padding-top: 8.125rem
+        padding-bottom: 8.125rem
     &__list
         display: flex
         justify-content: center
-        margin-top: 25px
-        padding-inline-start: 0px
+        margin-top: 1.5625rem
+        padding-inline-start: 0rem
+        opacity: 0
+        transform: translateY(100%)
         &-item   
-            margin-right: 5px
-            margin-left: 5px
+            margin-right: .3125rem
+            margin-left: .3125rem
             &-inner
-                perspective: 200px
-                padding: 35px
+                perspective: 12.5rem
+                padding: 2.1875rem
                 background-color: $bg-img
                 display: flex
                 align-items: center
@@ -152,10 +174,10 @@ section
                 animation-iteration-count: 1         
     &__item
         &-img
-            width: 60px
-            height: 62px
+            width: 3.75rem
+            height: 3.875rem
         &-title
-            margin-top: 15px
+            margin-top: .9375rem
 .projects
     text-align: center
     &__inner
@@ -163,20 +185,24 @@ section
         flex-wrap: wrap
         justify-content: center
         align-items: center
-        margin-top: 25px
+        margin-top: 1.5625rem
     &__card
         width: 35%
         background-color: $bg-img
-        padding: 20px 25px 20px 25px
-        border: 1px solid #333
-        margin-right: 10px
-        margin-left: 10px
-        margin-bottom: 20px
+        padding: 1.25rem 1.5625rem 1.25rem 1.5625rem
+        border: .0625rem solid #333
+        margin-right: .625rem
+        margin-left: .625rem
+        margin-bottom: 1.25rem
+        opacity: 0
+        transform: translateY(100%)
+
+        
         &-img
             width: 100%
             // background-color: $black
             // border: 1px solid #333
-            margin-bottom: 10px
+            margin-bottom: .625rem
         &-image
             width: 100%
     &__info
@@ -185,9 +211,9 @@ section
         flex-direction: column
         &-tech
             color: $gray
-            font-size: 14px
+            font-size: .875rem
         &-title
-            margin-bottom: 2px
+            margin-bottom: .125rem
 
 .animated-skill
     animation: skill_card 1.5s 1
@@ -205,20 +231,24 @@ section
         transform: rotateY(360deg)    
 
 @media screen and (max-width: 1110px)
+    html
+        font-size: calc(100vw / 1100 * 14)
     .container
         width: 100%
-        padding-right: 20px
-        padding-left: 20px
+        padding-right: 6.25rem
+        padding-left: 6.25rem
     .projects__link-container
         flex-direction: column
         .button-yellow
-            margin-bottom: 20px
+            margin-bottom: 1.25rem
     .link
         width: 100%
     .button
         width: 100%
 
 @media screen and (max-width: 940px)
+    html
+        font-size: calc(100vw / 940 * 14)
     .skills__list
         flex-wrap: wrap
         width: fit-content
@@ -226,9 +256,10 @@ section
             flex-basis: 30%
             align-items: center
             justify-content: center
-            margin-bottom: 10px
-
+            margin-bottom: .625rem
 @media screen and (max-width: 750px)
+    html
+        font-size: calc(100vw / 750 * 14)
     .header__nav
         width: 70% 
     .projects__card
@@ -237,24 +268,31 @@ section
         width: 100%
     
 @media screen and (max-width: 660px)
+    .container
+        padding-left: 3.25rem
+        padding-right: 3.25rem
+    html
+        font-size: calc(100vw / 660 * 14)
     .information__buttons
         .button
             width: 90%
         .button-yellow
             margin-right: 0
-            margin-bottom: 15px 
+            margin-bottom: .9375rem
     .about__main
         width: 80%
 
 @media screen and (max-width: 580px) 
+    html
+        font-size: calc(100vw / 580 * 14)
     .information
         flex-direction: column
-        margin-top: 70px
+        margin-top: 4.375rem
         &__about
             text-align: center
-            margin-bottom: 40px
+            margin-bottom: 2.5rem
         &__image
-            width: 70%
+            // width: 70%
             margin: 0 auto
     .about
         &__list
@@ -263,7 +301,7 @@ section
             margin: 0 auto
             &-item
                 flex-basis: 50%
-                margin-bottom: 15px
+                margin-bottom: .9375rem
     .skills__list
         &-item
             flex-basis: 46%
@@ -276,9 +314,11 @@ section
 
 
 @media screen and (max-width: 430px)
+    html
+        font-size: calc(100vw / 430 * 14)
     .information
         &__image
-            width: 90%
+            // width: 90%
     .about
         &__list
             width: 95%
@@ -290,7 +330,7 @@ section
     display: flex
     justify-content: space-between
     align-items: center
-    margin-top: 10px
+    margin-top: .625rem
 
 
     

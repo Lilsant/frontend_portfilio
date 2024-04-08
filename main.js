@@ -1,29 +1,174 @@
 // scroll animation
-function onEntry(entry) {
-  entry.forEach((change) => {
-    if (change.isIntersecting) {
-      change.target.classList.add("element-show");
-    }
-  });
+
+gsap.registerPlugin(ScrollTrigger);
+Splitting();
+
+
+const lenis = new Lenis({
+  duration: 1.2,
+  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+  direction: "vertical",
+  gestureDirection: "vertical",
+  smooth: true,
+  mouseMultiplier: 1,
+  smoothTouch: false,
+  touchMultiplier: 2,
+  infinite: false,
+});
+
+function raf(time) {
+  lenis.raf(time);
+  requestAnimationFrame(raf);
 }
 
-let options = {
-  threshold: [0.5],
-};
-let observer = new IntersectionObserver(onEntry, options);
-let elements = document.querySelectorAll("section");
+requestAnimationFrame(raf);
 
-if (screen.width < 500) {
-  elements.forEach((el, i) => {
-    if (i == elements.length - 1) el.classList.add("element-show");
-  });
-}
+let heroTl = gsap.timeline({
+  default: {
+    ease: "power2.inOut",
+    // duration: 2,
+  },
+});
 
-for (let elm of elements) {
-  observer.observe(elm);
-}
+heroTl.pause();
+heroTl.play();
 
-// scroll
+heroTl.fromTo(
+  ".header",
+  {
+    transform: "scale(0)",
+  },
+  {
+    transform: "scale(1)",
+    duration: 1.5
+  },
+  "-=0.5"
+);
+heroTl.fromTo(
+  ".information",
+  {
+    y: 100,
+    opacity: 0,
+  },
+  {
+    y: 0,
+    opacity: 1,
+    duration: 1.5
+  },
+  "-=0.5"
+);
+
+
+ScrollTrigger.create({
+  trigger: ".about",
+  start: "top bottom-=100",
+  once: true,
+  // markers: true,
+  onEnter: () => {
+    gsap.to(".about .title .char", {
+      stagger: 0.03,
+      opacity: 1,
+      ease: "power2.inOut",
+    }),
+    heroTl.to(
+      ".about .about__description .word",
+
+      {
+        stagger: 0.03,
+        opacity: 1,
+        ease: "power2.inOut",
+        // duration: 0.05,
+      }
+    );
+  },
+});
+
+ScrollTrigger.create({
+  trigger: ".about",
+  start: "top bottom-=150",
+  once: true,
+  // markers: true,
+  onEnter: () => {
+    gsap.to(".about__list li", {
+      y: 0,
+      // stagger: 0.03,
+      opacity: 1,
+      ease: "circ.out",
+      duration: 0.8,
+    });
+  },
+})
+
+ScrollTrigger.create({
+  trigger: ".skills",
+  start: "top bottom-=150",
+  once: true,
+  // markers: true,
+  onEnter: () => {
+    gsap.to(".skills .skills__inner h2 .char", {
+      stagger: 0.03,
+      opacity: 1,
+      ease: "power2.inOut",
+    });
+    gsap.to(".skills__list", {
+      y: 0,
+      // stagger: 0.03,
+      opacity: 1,
+      ease: "circ.out",
+      duration: 0.8,
+    });
+  },
+});
+
+ScrollTrigger.create({
+  trigger: ".projects",
+  start: "top bottom-=150",
+  once: true,
+  // markers: true,
+  onEnter: () => {
+    gsap.to(".projects__card", {
+      y: 0,
+      // stagger: 0.03,
+      opacity: 1,
+      ease: "circ.out",
+      duration: 0.8,
+    }),
+    gsap.to(".projects h2 .char", {
+      stagger: 0.03,
+      opacity: 1,
+      ease: "power2.inOut",
+    });
+  },
+});
+
+
+// function onEntry(entry) {
+//   // entry.forEach((change) => {
+//   //   if (change.isIntersecting) {
+//   //     change.target.classList.add("element-show");
+//   //   }
+//   // });
+// }
+
+// // let options = {
+// //   threshold: [0.5],
+// // };
+
+// // let observer = new IntersectionObserver(onEntry, options);
+// // let elements = document.querySelectorAll("section");
+
+
+// // if (screen.width < 500) {
+// //   elements.forEach((el, i) => {
+// //     if (i == elements.length - 1) el.classList.add("element-show");
+// //   });
+// // }
+
+// for (let elm of elements) {
+//   observer.observe(elm);
+// }
+
+// // scroll
 
 const typeText = document.querySelector(".information__subtitle-text"),
   pipe = document.querySelector(".pipe"),

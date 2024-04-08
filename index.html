@@ -12,6 +12,19 @@
     />
     <link rel="stylesheet" href="style.css" />
     <title>Lilsant Portfolio</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.39/dist/lenis.min.js"></script>    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+    <link
+    rel="stylesheet"
+    href="https://unpkg.com/splitting/dist/splitting.css"
+  />
+
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/splitting/dist/splitting-cells.css"
+  />
   </head>
   <body>
     <div class="container">
@@ -63,14 +76,14 @@
         </section>
         <section id="about" class="about">
           <div class="about__main">
-            <h2 class="title">Обо мне</h2>
-            <p class="about__description">
+            <h2 class="title" data-splitting="chars">Обо мне</h2>
+            <p class="about__description" data-splitting="words">
               Front-end разработчик. Занимаюсь web-разработкой более
               года. За это время создал несколько качественных сайтов для клиентов, выполнил десятки заказов на фриланс-биржах. Хочу
               развиваться в этой сфере дальше, бок-о-бок с высококлассными
               специалистами, получая от них ценный опыт.
             </p>
-            <p class="about__description">
+            <p class="about__description" data-splitting="words">
               Мне 23 года. Обучался на онлайн-курсах. В данный момент времени работаю на фрилансе,
               прохожу обучение в Школе 21.
             </p>
@@ -79,7 +92,7 @@
             <ul class="about__list">
               <li class="about__list-item">
                 <div class="about__contacts-img">
-                  <img src="images/smile.svg" alt="smile img" />
+                  <img src="images/smile.svg" class="about__contacts-icon" alt="smile img" />
                 </div>
                 <div class="about__contacts-info">
                   <h3 class="about__contacts-title">Имя</h3>
@@ -88,7 +101,7 @@
               </li>
               <li class="about__list-item">
                 <div class="about__contacts-img">
-                  <img src="images/mail.svg" alt="mail img" />
+                  <img src="images/mail.svg" class="about__contacts-icon" alt="mail img" />
                 </div>
                 <div class="about__contacts-info">
                   <h3 class="about__contacts-title">Почта</h3>
@@ -99,7 +112,7 @@
               </li>
               <li class="about__list-item">
                 <div class="about__contacts-img">
-                  <img src="images/instagram.svg" alt="instagram img" />
+                  <img src="images/instagram.svg" class="about__contacts-icon" alt="instagram img" />
                 </div>
                 <div class="about__contacts-info">
                   <h3 class="about__contacts-title">Instagram</h3>
@@ -108,7 +121,7 @@
               </li>
               <li class="about__list-item">
                 <div class="about__contacts-img">
-                  <img src="images/phone.svg" alt="phoone img" />
+                  <img src="images/phone.svg" class="about__contacts-icon" alt="phoone img" />
                 </div>
                 <div class="about__contacts-info">
                   <h3 class="about__contacts-title">Телефон</h3>
@@ -122,7 +135,7 @@
         </section>
         <section id="skills" class="skills">
           <div class="skills__inner">
-            <h2 class="title">Навыки</h2>
+            <h2 class="title" data-splitting="chars">Навыки</h2>
             <ul class="skills__list">
               <li class="skills__list-item">
                 <div class="skills__list-item-inner">
@@ -198,7 +211,7 @@
           </div>
         </section>
         <section id="projects" class="projects">
-          <h2 class="title">Проекты</h2>
+          <h2 class="title" data-splitting="chars">Проекты</h2>
           <div class="projects__inner">
             <div class="projects__card">
               <div class="projects__card-img">
@@ -333,7 +346,7 @@
                 />
               </div>
               <div class="projects__info">
-                <h3 class="projects__info-title">Лендинг "Йога"</h3>
+                <h3 class="projects__info-title">Лендинг "Yoga"</h3>
                 <span class="projects__info-tech"
                   >Technologies: HTML5, Saas</span
                 >
